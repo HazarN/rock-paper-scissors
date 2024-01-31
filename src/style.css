@@ -6,14 +6,93 @@
     box-sizing: inherit;
 }
 
-html {
-    font-size: 62.5%;
-    box-sizing: border-box;
+html,
+body {
+    height: 100%;
 }
 
+html {
+    font-size: 85%;
+    box-sizing: border-box;
+}
 body {
     font-family: 'Press Start 2P', cursive;
     font-size: 1.6rem;
     background-color: #020D19;
     color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header,
+footer {
+    margin: 2rem;
+}
+header {
+    margin-top: 15%;
+    margin-bottom: 5%;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.menu > button {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    padding: .5rem;
+}
+.menu > button:hover {
+    color: #95a7b1;
+}
+
+footer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    width: 100%;
+    background-color: #95a7b1;
+    /* pin to bottom */
+    margin-top: auto;
+
+    color: black;
+    margin-bottom: 0;
+    padding: 1rem;
+}
+
+h1,
+h2,
+p,
+footer {
+    text-align: center;
+}
+
+/* tablet responsiveness*/
+@media only screen and (max-width: 768px) and (min-width: 577px) {
+    html {
+        font-size: 65%;
+    }
+
+    header {
+        margin-top: 30%;
+    }
+}
+
+/* mobile responsiveness */
+@media only screen and (max-width: 576px) {
+    html {
+        font-size: 45%;
+    }
+
+    header {
+        margin-top: 40%;
+    }
 }
