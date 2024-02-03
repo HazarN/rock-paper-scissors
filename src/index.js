@@ -29,3 +29,9 @@ rulesButton.addEventListener("click", () => {
         menu.removeChild(closeButton);
     });
 });
+
+const gameButton   = document.getElementById("play");
+
+gameButton.addEventListener("click", () => {
+    window.location.href = "play.html";
+});
