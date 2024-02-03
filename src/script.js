@@ -4,6 +4,11 @@ const rules = `<p class="rules">• Rock beats scissor <br>• Paper beats rock<
 const rulesButton = document.getElementById("rulesButton");
 
 rulesButton.addEventListener("click", () => {
+    if (document.querySelector(".rules")) {
+        document.querySelector(".rules").remove();
+        document.querySelector(".menu > button:nth-child(3)").remove();
+    }
+
     console.log('clicked');
 
     const menu = document.querySelector('.menu');
