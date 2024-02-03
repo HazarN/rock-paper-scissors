@@ -75,6 +75,14 @@ footer {
     text-align: center;
 }
 
+.rules {
+    font-size: 75%;
+    text-align: left;
+}
+.close-button {
+    font-size: 75%;
+}
+
 /* tablet responsiveness*/
 @media only screen and (max-width: 768px) and (min-width: 577px) {
     html {

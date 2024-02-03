@@ -1,3 +1,28 @@
 "use strict";
 
-console.log('Hello World!');
+const rules = `<p class="rules">• Rock beats scissor <br>• Paper beats rock<br>• Scissor beats paper</p>`;
+const rulesButton = document.getElementById("rulesButton");
+
+rulesButton.addEventListener("click", () => {
+    console.log('clicked');
+
+    const menu = document.querySelector('.menu');
+
+    // Create a new paragraph element for the rules
+    const rulesParagraph = document.createElement('p');
+    rulesParagraph.innerHTML = rules;
+    rulesParagraph.classList.add('rules');
+    menu.appendChild(rulesParagraph);
+
+    // Create the close button
+    const closeButton = document.createElement('button');
+    closeButton.style.fontSize = '65%';
+    closeButton.innerHTML = 'Close';
+    menu.appendChild(closeButton);
+
+    closeButton.addEventListener('click', () => {
+        // Remove the rules paragraph and the close button when the close button is clicked
+        menu.removeChild(rulesParagraph);
+        menu.removeChild(closeButton);
+    });
+});
