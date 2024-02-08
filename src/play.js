@@ -27,19 +27,19 @@ const checkWinner = (player, ai) => {
 // Game Logic
 images.forEach((image) =>{
     image.onclick = () => {
+        // Preventing multiple clicks
         if (image.classList.contains('player-picked')) return;
 
         // Player
-        console.log('clicked', image.alt);
         image.classList.add('player-picked');   
         images.forEach((image) => {
             if (!image.classList.contains('player-picked')) {
                 image.remove();
             }
         });
-        const number = Math.floor(Math.random() * 3) + 1;
-
+        
         // AI
+        const number = Math.floor(Math.random() * 3) + 1;
         let aiPick;
         if (number === object.rock) {
             aiPick = createImage('../assets/r.png', 'rock');
@@ -65,7 +65,6 @@ images.forEach((image) =>{
         }
     }
 });
-
 
 // Go back to the main page
 goBackButton.onclick = () => {
