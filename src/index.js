@@ -3,6 +3,8 @@
 const rules       = `<p class="rules">• Rock beats scissor <br>• Paper beats rock<br>• Scissor beats paper</p>`;
 const rulesButton = document.getElementById("rulesButton");
 
+
+
 rulesButton.addEventListener("click", () => {
     if (document.querySelector(".rules")) {
         document.querySelector(".rules").remove();

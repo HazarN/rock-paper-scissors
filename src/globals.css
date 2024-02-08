@@ -96,7 +96,7 @@ h3 {
 }
 
 img {
-    width: 350px;
+    width: 300px;
     height: auto;
     cursor: pointer;
 }
@@ -106,6 +106,39 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.anim-default {
+    animation: slideInFromLeft 1s forwards;
+}
+
+.win-background {
+    background-color: #0B6623;
+    transition: 1s;
+}
+.draw-background {
+    background-color: #99a8b5;
+    transition: 1s;
+}
+.lose-background {
+    background-color: #680C07;
+    transition: 1s;
 }
 
 /* tablet responsiveness*/
