@@ -1,5 +1,8 @@
 'use strict';
 
+let returnState = false;
+
+const returnE = document.querySelector('.return');
 const goBackButton = document.querySelector('.go-back');
 const images = document.querySelectorAll('main > *');
 const object = {
@@ -15,6 +18,8 @@ const createImage = (src, alt) => {
     return img;
 }
 const checkWinner = (player, ai) => {
+    returnState = true;
+
     if (player === ai) {
         return ['It\'s a tie!', 0];
     } else if ((player === object.rock && ai === object.scissors) || (player === object.paper && ai === object.rock) || (player === object.scissors && ai === object.paper)) {
@@ -27,6 +32,7 @@ const checkWinner = (player, ai) => {
 // Game Logic
 images.forEach((image) =>{
     image.onclick = () => {
+        console.log('clicked');
         // Preventing multiple clicks
         if (image.classList.contains('player-picked')) return;
 
@@ -34,7 +40,7 @@ images.forEach((image) =>{
         image.classList.add('player-picked');   
         images.forEach((image) => {
             if (!image.classList.contains('player-picked')) {
-                image.remove();
+                image.classList.add('hidden');
             }
         });
         
@@ -77,3 +83,18 @@ window.onload = () => {
         window.location.href = "index.html";
     }
 }
+
+returnE.onclick = () => {
+    if (returnState) {
+        const aiPick = document.querySelector('.ai-picked');
+        document.querySelector('body').classList.remove('win-background', 'lose-background', 'draw-background');
+        document.querySelector('h1').textContent = 'Rock, Paper, Scissors';
+        images.forEach((image) => {
+            image.classList.remove('player-picked', 'hidden');
+            if (aiPick) {
+                aiPick.remove();
+            }
+        });
+        returnState = false;
+    }
+};
