@@ -141,6 +141,14 @@ main {
     transition: 1s;
 }
 
+.hidden {
+    display: none;
+}
+
+.return > * {
+    font-size: 4.5rem;
+}
+
 /* tablet responsiveness*/
 @media only screen and (max-width: 1080px) and (min-width: 769px) {
     html {
