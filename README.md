@@ -23,10 +23,10 @@ To install;
   - Download the Live Server extention in VS Code. Then run it by pressing 'Go Live' button in down right corner.
     
   - If you have node installed, you can install live-server and run like;
-    ```bash
-    $ npm install -g live-server
-    $ live-server
-    ```
+  ```bash
+  $ npm install -g live-server
+  $ live-server
+  ```
 
 ## Usage
 
